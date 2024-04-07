@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Iterative Motion Editing with Natural Language</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/media/favicon-16x16.png">
+    <link rel="manifest" href="./assets/media/site.webmanifest">
+
+    <meta property="og:site_name" content="Iterative Motion Editing with Natural Language" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="EDGE: Iterative Motion Editing with Natural Language" />
+    <meta property="og:description" content="Iterative Motion Editing with Natural Language, 2024." />
+    <meta property="og:url" content="https://edge-dance.github.io/" />
+    <meta property="og:image" content="https://edge-dance.github.io/assets/media/cover.png" />
+
+    <!--
+    <meta property="article:publisher" content="https://edge-dance.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EDGE: Editable Dance Generation from Music" />
+    <meta name="twitter:description" content="We leverage Jukebox embeddings and a deep diffusion framework to generate diverse dances from music." />
+    <meta name="twitter:url" content="https://edge-dance.github.io/" />
+    <meta name="twitter:image" content="https://edge-dance.github.io/assets/media/cover.png" />
+    -->
+    <!-- <meta name="twitter:site" content="" /> -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sticksy/dist/sticksy.min.js"></script>
+</head>
+
+<body class="noscroll">
+    <!--
+    <div id="set-height">
+        <div class="js-sticky-widget">
+            <canvas id="v0"></canvas>
+        </div>
+    </div>
+    <div id="mouse_div">
+        <div class="mouse_scroll">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div>
+                <span class="m_scroll_arrows unu"></span>
+                <span class="m_scroll_arrows doi"></span>
+                <span class="m_scroll_arrows trei"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        const html = document.getElementById("set-height");
+        const canvas = document.getElementById("v0");
+        let context = canvas.getContext("2d");
+        const frameCount = 26;
+        let frame_narrow = ""
+
+        function update_narrow() {
+            let w = window.innerWidth;
+            if (w >= 1300) {
+                frame_narrow = "";
+                canvas.width = 2000;
+                canvas.height = 1000;
+                context = canvas.getContext("2d")
+            } else if (w >= 1000) {
+                frame_narrow = "_midrange";
+                canvas.width = 2000;
+                canvas.height = 2000;
+                context = canvas.getContext("2d")
+            } else {
+                frame_narrow = "_narrow";
+                canvas.width = 1000;
+                canvas.height = 2000;
+                context = canvas.getContext("2d")
+            }
+            Sticksy.hardRefreshAll();
+        }
+
+        function drawToCanvas() {
+            const scrollTop = window.pageYOffset; //html.scrollTop;
+            const maxScrollTop = html.scrollHeight; // - window.innerHeight;
+            const scrollFraction = scrollTop / maxScrollTop;
+            const frameIndex = Math.min(
+                frameCount - 1,
+                Math.ceil(scrollFraction * frameCount)
+            );
+
+            const mousefade = 1 - Math.min((scrollFraction / 0.02), 1);
+            document.getElementById("mouse_div").style.opacity = mousefade;
+
+            requestAnimationFrame(() => updateImage(frameIndex + 1))
+        }
+
+        window.addEventListener('resize', function(event) {
+            update_narrow();
+            drawToCanvas();
+        });
+        const currentFrame = index => (
+            `./assets/media/frames${frame_narrow}/${(60 + 2 * (index - 1)).toString().padStart(4, '0')}.jpg`
+        )
+
+        const preloadImages = () => {
+            for (let i = 1; i < frameCount; i++) {
+                const img = new Image();
+                img.src = currentFrame(i);
+            }
+        };
+
+        let setHeight = document.getElementById("set-height");
+        setHeight.style.height = frameCount * 200 + "px";
+
+        const img = new Image()
+        img.src = currentFrame(1);
+        update_narrow();
+        img.onload = function() {
+            context.drawImage(img, 0, 0);
+        }
+
+        const updateImage = index => {
+            img.src = currentFrame(index);
+            context.drawImage(img, 0, 0);
+        }
+
+        window.addEventListener('scroll', () => {
+            drawToCanvas();
+        });
+
+        preloadImages()
+        var stickyElements = Sticksy.initializeAll('.js-sticky-widget')
+    </script>
+    -->
+    <!--
+    <div style="background-color: rgb(26, 26, 26);">
+        <img src="./assets/media/cover.png" class="img-fluid" alt="Responsive image">
+    </div>
+    -->
+    <div class="button-bar text-light" style="padding-bottom: 10px; background-color: rgb(35, 35, 35);">
+        <div class="container" style="max-width: 768px;">
+            <h1 class="text-center">Iterative Motion Editing with Natural Language</h1>
+        </div>
+        <div class="container" style="max-width: 768px;">
+            <h3 class="text-center" stye="font-size:2rem;">SIGGRAPH 2024</h3>
+        </div>
+        <div class="container" style="max-width: 768px; padding-bottom: 20px;">
+            <div class="row authors">
+                <div class="col">
+                    <h5 class="text-center">Purvi Goel</h5>
+                    <h6 class="text-center"></h6>
+                </div>
+                <div class="col">
+                    <h5 class="text-center">Kuan-Chieh Huang</h5>
+                    <h6 class="text-center"></h6>
+		        </div>
+                <div class="col">
+                    <h5 class="text-center">C. Karen Liu</h5>
+                    <h6 class="text-center"></h6>
+		</div>
+		<div class="col">
+                    <h5 class="text-center">Kayvon Fatahalian</h5>
+                    <h6 class="text-center"></h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="max-width: 768px; padding-bottom: 0px;">
+            <div class="row authors">
+                <div class="col">
+                    <h6 style="margin-top: 10px;" class="text-center">Stanford University</h6>
+                </div>
+            </div>
+        </div>
+        <div class="buttons" style="margin-bottom: 8px;">
+            <a class="btn text-light" role="button" href="https://arxiv.org/abs/2211.10658">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                    <path fill="white" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+                </svg>Paper
+            </a>
+            <a class="btn text-light" role="button" href="https://github.com/Stanford-TML/EDGE">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24"><path fill="white" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>Code
+            </a>
+            <a class="btn text-light" role="button" href="https://edge-sandbox.com/">
+                <svg class="svg-inline--fa fa-rocket fa-w-16" style="width:24px;height:24px;margin-left:-12px;margin-right:12px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rocket" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505.12019,19.09375c-1.18945-5.53125-6.65819-11-12.207-12.1875C460.716,0,435.507,0,410.40747,0,307.17523,0,245.26909,55.20312,199.05238,128H94.83772c-16.34763.01562-35.55658,11.875-42.88664,26.48438L2.51562,253.29688A28.4,28.4,0,0,0,0,264a24.00867,24.00867,0,0,0,24.00582,24H127.81618l-22.47457,22.46875c-11.36521,11.36133-12.99607,32.25781,0,45.25L156.24582,406.625c11.15623,11.1875,32.15619,13.15625,45.27726,0l22.47457-22.46875V488a24.00867,24.00867,0,0,0,24.00581,24,28.55934,28.55934,0,0,0,10.707-2.51562l98.72834-49.39063c14.62888-7.29687,26.50776-26.5,26.50776-42.85937V312.79688c72.59753-46.3125,128.03493-108.40626,128.03493-211.09376C512.07526,76.5,512.07526,51.29688,505.12019,19.09375ZM384.04033,168A40,40,0,1,1,424.05,128,40.02322,40.02322,0,0,1,384.04033,168Z"></path></svg>
+                Demo
+            </a>
+        </div>
+    </div>
+    <div style="background-color: rgb(0, 0, 0);">
+        <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        <!-- <strong> -->
+      			We introduce a method for using natural language to iteratively, <b>conversationally</b> specify local edits to existing character animations. Our key idea is to represent a space of motion edits using a set of kinematic motion editing operators (MEOs) that have well-defined semantics for how to modify specific frames of a target motion. We provide an algorithm that leverages pre-existing language models to translate textual descriptions of motion edits into source code for MEO programs. We execute MEOs by first translating them into keyframe constraints, and then use diffusion-based motion models to generate output motions that respect these constraints.
+                        <!-- </strong> -->
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: rgb(0, 0, 0);">
+            <div class="video-row">
+                <div class="col" style="padding-left:250px; padding-bottom:20px; display:grid;">
+                    <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:90%">
+                        <source src="./assets/video/original-dance.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+                <div class="col" style="padding-right:250px; padding-bottom:20px; display:grid;">
+                    <video class="specialvideo video lazy img-fluid"  muted loop playsinline controls style="width:90%">
+                        <source src="./assets/video/edit1-dance.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+            </div>
+            <div class="video-row">
+                <div class="col" style="padding-left:250px; display:grid;">
+                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
+                        <source src="./assets/video/edit2-dance2.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+                <div class="col" style="padding-right:250px; display:grid;">
+                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
+                        <source src="./assets/video/edit3-dance.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
+            <div class="row captioned_videos">
+                <div class="col-md-12">
+                    <!-- Small format devices -->
+                    <h6 class="caption">Pictured: An iterative editing session with our system that progressively modifies a dance sequence.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: rgb(60, 60, 60);">
+        <div class="container text-light" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
+            <p>Our system can generate edited motions that are faithful to input instructions, are non-destructive to the original motion, and are plausible.</p>
+        </div>
+    </div>
+    <!-- Big grid -->
+    <div style="background-color: rgb(0, 0, 0);">
+        <div class="video-row">
+            <div class="col" style="padding:0; display:grid;">
+                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                    <source src="./assets/video/original-swingarms2.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col" style="padding:0; display:grid;">
+                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+                    <source src="./assets/video/edited-swingarms.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+        </div>
+        <div class="video-row">
+            <div class="col" style="padding:0; display:grid;">
+                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls>
+                    <source src="./assets/video/original-chamberpos2.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col" style="padding:0; display:grid;">
+                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls>
+                    <source src="./assets/video/edited-chamberpos.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+        </div>
+        <div class="video-row">
+            <div class="col" style="padding:0; display:grid;">
+                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls>
+                    <source src="./assets/video/original-kickout.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col" style="padding:0; display:grid;">
+                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls>
+                    <source src="./assets/video/edited-kickout.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: rgb(255, 255, 255);">
+        <div class="container" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px; ">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="./assets/images/system.png" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div style="background-color: rgb(70, 70, 70);">
+        <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <p> We represent editing instructions as sequences of kinematic motion editing operations (MEOs) with well-defined semantics about how to modify joints, expressed relative to the properties of the source motion. An LLM translates instructions into an exectuable Python program of MEOs. Our execution engine applies MEOs to the source motion by first generating motion constraints (e.g., keyframes, retiming constraints); a diffusion-based motion infilling step integrates edited keyframes into the source motion. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: rgb(0, 0, 0); padding-top: 30px; " >
+            <div class="video-row">
+                <div class="col" style="padding-left:250px; padding-bottom:20px; display:grid;">
+                    <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:90%">
+                        <source src="./assets/video/kick-itr.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+                <div class="col" style="padding-right:250px; padding-bottom:20px; display:grid;">
+                    <video class="specialvideo video lazy img-fluid"  muted loop playsinline controls style="width:90%">
+                        <source src="./assets/video/punch-itr2.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+            </div>
+            <div class="video-row">
+                <div class="col" style="padding-left:250px; display:grid;">
+                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
+                        <source src="./assets/video/kick2-itr.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+                <div class="col" style="padding-right:250px; display:grid;">
+                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
+                        <source src="./assets/video/squat-itr2.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div style="background-color: rgb(35, 35, 35);">
+        <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
+            <div class="row">
+                <div class="col-md-12">
+                   <h1>A conversational interface for editing motions</h1>
+                        <h5>Our system allows editing motions in a conversational manner, which enables:</h5>
+                        <p></p>
+                        <ol>
+                            <li>
+                                <h5> Progressive, interpretable refinement of the character's motion. </h5>
+                            </li>
+                            <li>
+                                <h5> Allowing the user to break larger editing tasks into sub-goals. </h5>
+                            </li>
+                            <li>
+                                <h5> Clarification or even adjustment of editing intent during refinement. </h5>
+                            </li>
+                        </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div style="background-color: rgb(255, 255, 255);">
+        <div class="container my-text-dark" style="padding: 30px 0px; text-align:center;">
+            <img src="./assets/images/user_study.png" class="img-fluid" alt="Responsive image">
+            <p>Human raters prefer edited motions generated by our system over those of previous work, finding our motions retain greater fidelity to the editing instruction (y-axis), while preserving the structure of the source motion (x-axis).</p>
+        </div>
+    </div>
+
+     <div style="background-color: rgb(90, 90, 90);">
+        <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
+            <div class="row">
+                <div class="col-md-12">
+                   <h1>Limitations:</h1>
+                   <p> There's still a ways to go! Our system focuses on kinematic edits; physics-informed edits like, "Hit harder", or stylization edits like "Do that more excitedly" are not currently handled. Extending the execution engine to handle more general edits or to further improve the quality of generated motions are exciting future directions.  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: rgb(70, 70, 70);">
+        <div class="container text-light" style="max-width: 768px; padding: 30px 0px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>This website was developed referencing the excellent <a href="https://imagen.research.google/">Imagen</a> site.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
