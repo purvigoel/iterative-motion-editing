@@ -200,7 +200,7 @@
                 <div class="col-md-12">
                     <p>
                         <!-- <strong> -->
-      			We introduce a method for using natural language to iteratively, <b>conversationally</b> specify local edits to existing character animations. Our key idea is to represent a space of motion edits using a set of kinematic motion editing operators (MEOs) that have well-defined semantics for how to modify specific frames of a target motion. We provide an algorithm that leverages pre-existing language models to translate textual descriptions of motion edits into source code for MEO programs. We execute MEOs by first translating them into keyframe constraints, and then use diffusion-based motion models to generate output motions that respect these constraints.
+      			We introduce a system for using natural language to iteratively, <b>conversationally</b> specify local edits to character motion. Our key idea, inspired by recent work utilizing LLMs in robot planning, is to cast motion editing as a two-step process: converting natural language editing instructions into Python programs that describe fine-grained editing operations with a large language model, then executing resulting operations using a constraint generation and diffusion-based motion infilling process. As an intermediate between text and joints, we define a set of kinematic motion editing operators (MEOs) that have well-defined semantics for how to modify specific frames of a target motion.
                         <!-- </strong> -->
                     </p>
                 </div>
