@@ -195,6 +195,18 @@
         </div>
     </div>
     <div style="background-color: rgb(0, 0, 0);">
+        
+
+        <div class="container" style="max-width: 768px; padding-top: 30px;  ">
+            <div class="row">
+                <div class="col-md-12">
+                    <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls   style="width:90%; padding-left:5%">
+                        <source src="./assets/video/teaser.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+            </div>
+        </div>
+
         <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
             <div class="row">
                 <div class="col-md-12">
@@ -249,57 +261,68 @@
     <!-- Big grid -->
     <div style="background-color: rgb(0, 0, 0);">
         <div class="video-row">
-            <div class="col" style="padding:0; display:grid;">
-                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+            <div class="col" style="padding-left:250px; padding-bottom:20px; display:grid;">
+                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:90%">
                     <source src="./assets/video/original-swingarms2.mp4" type="video/mp4"></source>
                 </video>
             </div>
-            <div class="col" style="padding:0; display:grid;">
-                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls>
+            <div class="col" style="padding-right:250px; padding-bottom:20px; display:grid;">
+                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:90%">
                     <source src="./assets/video/edited-swingarms.mp4" type="video/mp4"></source>
                 </video>
             </div>
         </div>
         <div class="video-row">
-            <div class="col" style="padding:0; display:grid;">
-                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls>
+            <div class="col" style="padding-left:250px; padding-bottom:20px; display:grid;">
+                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
                     <source src="./assets/video/original-chamberpos2.mp4" type="video/mp4"></source>
                 </video>
             </div>
-            <div class="col" style="padding:0; display:grid;">
-                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls>
+            <div class="col" style="padding-right:250px; padding-bottom:20px; display:grid;">
+                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
                     <source src="./assets/video/edited-chamberpos.mp4" type="video/mp4"></source>
                 </video>
             </div>
         </div>
         <div class="video-row">
-            <div class="col" style="padding:0; display:grid;">
-                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls>
+            <div class="col" style="padding-left:250px; display:grid;">
+                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
                     <source src="./assets/video/original-kickout.mp4" type="video/mp4"></source>
                 </video>
             </div>
-            <div class="col" style="padding:0; display:grid;">
-                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls>
+            <div class="col" style="padding-right:250px; display:grid;">
+                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
                     <source src="./assets/video/edited-kickout.mp4" type="video/mp4"></source>
                 </video>
             </div>
         </div>
     </div>
-    <div style="background-color: rgb(255, 255, 255);">
-        <div class="container" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px; ">
-            <div class="row">
-                <div class="col-md-12">
-                    <img src="./assets/images/system.png" class="img-fluid" alt="Responsive image">
-                </div>
-            </div>
-        </div>
-    </div>
+    
    
-    <div style="background-color: rgb(70, 70, 70);">
-        <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
+    <div style="background-color: rgb(255, 255, 255);">
+        <div class="container" style="max-width: 768px; padding-top: 30px;">
             <div class="row">
                 <div class="col-md-12">
                     <p> We represent editing instructions as sequences of kinematic motion editing operations (MEOs) with well-defined semantics about how to modify joints, expressed relative to the properties of the source motion. An LLM translates instructions into an exectuable Python program of MEOs. Our execution engine applies MEOs to the source motion by first generating motion constraints (e.g., keyframes, retiming constraints); a diffusion-based motion infilling step integrates edited keyframes into the source motion. </p>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: rgb(255, 255, 255);">
+        <div class="container" style="max-width: 768px; padding-bottom: 30px;">
+            <div class="row">
+                <img src="./assets/images/system2.png" class="img-fluid" alt="Responsive image" style="width:150%">
+            </div>
+        </div>
+    </div>
+
+     <div style="background-color: rgb(0, 0, 0);">
+        <div class="container text-light" style="max-width: 768px; padding-top: 30px;;">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Our system allows editing motions in a conversational manner, which enables progressive refinement of the character's motion, allows the user to break larger editing tasks into sub-goals, and supports clarification or even adjustment of editing intent.</p>
+                   
                 </div>
             </div>
         </div>
@@ -333,33 +356,12 @@
         </div>
     </div>
 
-     <div style="background-color: rgb(35, 35, 35);">
-        <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
-            <div class="row">
-                <div class="col-md-12">
-                   <h1>A conversational interface for editing motions</h1>
-                        <h5>Our system allows editing motions in a conversational manner, which enables:</h5>
-                        <p></p>
-                        <ol>
-                            <li>
-                                <h5> Progressive, interpretable refinement of the character's motion. </h5>
-                            </li>
-                            <li>
-                                <h5> Allowing the user to break larger editing tasks into sub-goals. </h5>
-                            </li>
-                            <li>
-                                <h5> Clarification or even adjustment of editing intent during refinement. </h5>
-                            </li>
-                        </ol>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     
     <div style="background-color: rgb(255, 255, 255);">
         <div class="container my-text-dark" style="padding: 30px 0px; text-align:center;">
-            <img src="./assets/images/user_study.png" class="img-fluid" alt="Responsive image">
+            <img src="./assets/images/user_study.png" class="img-fluid" alt="Responsive image" style="width:60%">
             <p>Human raters prefer edited motions generated by our system over those of previous work, finding our motions retain greater fidelity to the editing instruction (y-axis), while preserving the structure of the source motion (x-axis).</p>
         </div>
     </div>
@@ -368,7 +370,7 @@
         <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
             <div class="row">
                 <div class="col-md-12">
-                   <h1>Limitations:</h1>
+                   <h2>Limitations:</h2>
                    <p> There's still a ways to go! Our system focuses on kinematic edits; physics-informed edits like, "Hit harder", or stylization edits like "Do that more excitedly" are not currently handled. Extending the execution engine to handle more general edits or to further improve the quality of generated motions are exciting future directions.  </p>
                 </div>
             </div>
