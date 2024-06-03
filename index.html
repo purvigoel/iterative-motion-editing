@@ -196,8 +196,6 @@
     </div>
     
     <div style="background-color: rgb(255,255,255);">
-        
-
         <div class="container" style="max-width: 768px; padding-top: 10px;  ">
             <div class="row">
                 <div class="col-md-12">
@@ -208,63 +206,38 @@
             </div>
         </div>
 
-        <div class="container" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
+        <div class="container" style="max-width: 768px; padding-top: 30px; padding-bottom: 0px;">
             <div class="row">
                 <div class="col-md-12">
+                    
                     <p>
                         <!-- <strong> -->
       			We introduce a system for using natural language to iteratively, <b>conversationally</b> specify local edits to character motion. Our key idea, inspired by recent work utilizing LLMs in robot planning, is to cast motion editing as a two-step process: converting natural language editing instructions into Python programs that describe fine-grained editing operations with a large language model, then executing resulting operations using a constraint generation and diffusion-based motion infilling process. As an intermediate between text and joints, we define a set of kinematic motion editing operators (MEOs) that have well-defined semantics for how to modify specific frames of a target motion.
                         <!-- </strong> -->
                     </p>
+                    
+
                 </div>
             </div>
         </div>
-        <!-- <div style="background-color: rgb(0, 0, 0);">
-            <div class="video-row">
-                <div class="col" style="padding-left:250px; padding-bottom:20px; display:grid;">
-                    <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:90%">
-                        <source src="./assets/video/original-dance.mp4" type="video/mp4"></source>
-                    </video>
-                </div>
-                <div class="col" style="padding-right:250px; padding-bottom:20px; display:grid;">
-                    <video class="specialvideo video lazy img-fluid"  muted loop playsinline controls style="width:90%">
-                        <source src="./assets/video/edit1-dance.mp4" type="video/mp4"></source>
-                    </video>
-                </div>
+        <div class="button-bar" style="padding-top: 0px; padding-bottom: 0px; background-color: rgb(255,255,255);">
+            <center> <p>Jump to:</p></center>
+            <div class="buttons" style="margin-bottom: 8px; margin-top: 0px;">
+                <a class="btn btn-black-outline" role="button" href="#section1" style="color: black; border: 1px solid black;">
+                    Single Edits
+                </a>
+                <a class="btn btn-black-outline" role="button" href="#section2" style="color: black; border: 1px solid black;">
+                    Iterative Edits
+                </a>
+                <a class="btn btn-black-outline" role="button" href="#section3" style="color: black; border: 1px solid black;">
+                    FAQ/Hindsights
+                </a>
             </div>
-            <div class="video-row">
-                <div class="col" style="padding-left:250px; display:grid;">
-                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
-                        <source src="./assets/video/edit2-dance2.mp4" type="video/mp4"></source>
-                    </video>
-                </div>
-                <div class="col" style="padding-right:250px; display:grid;">
-                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
-                        <source src="./assets/video/edit3-dance.mp4" type="video/mp4"></source>
-                    </video>
-                </div>
-            </div>
-        </div> -->
-       <!--  <div class="container text-light" style="max-width: 768px; padding-top: 30px; padding-bottom: 30px;">
-            <div class="row captioned_videos">
-                <div class="col-md-12">
-                </div>
-            </div>
-        </div> -->
+        </div>
     </div>
     
-    <div class="button-bar text-light" style="padding-bottom: 10px; background-color: rgb(35, 35, 35);">
-        <div class="buttons" style="margin-bottom: 8px;">
-            <a class="btn text-light" role="button" href="#section1">
-                Section 1
-            </a>
-            <a class="btn text-light" role="button" href="#section2">
-                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24"><path fill="black" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>Section 2
-            </a>
-        </div>
-    </div>
 
-    <div style="background-color: rgb(200, 200, 200);">
+    <div id="section1" style="background-color: rgb(200, 200, 200);">
         <div class="container" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
             <p>Our system can generate edited motions that are plausible, faithful to input instructions, and non-destructive to the original motion. The videos below show motions before and after the edit.</p>
         </div>
@@ -293,7 +266,7 @@
         </div>
     </div>
 
-     <div style="background-color: rgb(200, 200, 200);">
+     <div id="section2" style="background-color: rgb(200, 200, 200);">
         <div class="container" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
             <p>Our system allows editing motions conversationally, which enables progressive refinement of the character's motion, allows the user to break larger editing tasks into sub-goals, and supports clarification or even adjustment of editing intent. Each video below shows separate iterative editing sessions.</p>
                    
@@ -303,24 +276,24 @@
     <div style="background-color: rgb(255, 255, 255); padding-top: 30px; " >
             <div class="video-row">
                 <div class="col" style="padding-left:30%; padding-bottom:20px; display:grid;">
-                    <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:90%">
+                    <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:100%">
                         <source src="./assets/video/kick-itr.mp4" type="video/mp4"></source>
                     </video>
                 </div>
                 <div class="col" style="padding-right:20%; padding-bottom:20px; display:grid;">
-                    <video class="specialvideo video lazy img-fluid"  muted loop playsinline controls style="width:90%">
+                    <video class="specialvideo video lazy img-fluid"  muted loop playsinline controls style="width:100%">
                         <source src="./assets/video/punch-itr2.mp4" type="video/mp4"></source>
                     </video>
                 </div>
             </div>
             <div class="video-row">
                 <div class="col" style="padding-left:30%; display:grid;">
-                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
+                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:100%">
                         <source src="./assets/video/kick2-itr.mp4" type="video/mp4"></source>
                     </video>
                 </div>
                 <div class="col" style="padding-right:20%; display:grid;">
-                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:90%">
+                    <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:100%">
                         <source src="./assets/video/squat-itr2.mp4" type="video/mp4"></source>
                     </video>
                 </div>
@@ -328,7 +301,7 @@
         </div>
     </div>
 
-    <div style="background-color: rgb(200, 200, 200);">
+    <div id="section3" style="background-color: rgb(200, 200, 200);">
         <div class="container" style="max-width: 768px; padding-top: 30px;">
             <div class="row">
                 <div class="col-md-12">
