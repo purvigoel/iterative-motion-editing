@@ -28,113 +28,9 @@
 </head>
 
 <body class="noscroll">
-    <!--
-    <div id="set-height">
-        <div class="js-sticky-widget">
-            <canvas id="v0"></canvas>
-        </div>
-    </div>
-    <div id="mouse_div">
-        <div class="mouse_scroll">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div>
-                <span class="m_scroll_arrows unu"></span>
-                <span class="m_scroll_arrows doi"></span>
-                <span class="m_scroll_arrows trei"></span>
-            </div>
-        </div>
-    </div>
-    <script>
-        const html = document.getElementById("set-height");
-        const canvas = document.getElementById("v0");
-        let context = canvas.getContext("2d");
-        const frameCount = 26;
-        let frame_narrow = ""
-
-        function update_narrow() {
-            let w = window.innerWidth;
-            if (w >= 1300) {
-                frame_narrow = "";
-                canvas.width = 2000;
-                canvas.height = 1000;
-                context = canvas.getContext("2d")
-            } else if (w >= 1000) {
-                frame_narrow = "_midrange";
-                canvas.width = 2000;
-                canvas.height = 2000;
-                context = canvas.getContext("2d")
-            } else {
-                frame_narrow = "_narrow";
-                canvas.width = 1000;
-                canvas.height = 2000;
-                context = canvas.getContext("2d")
-            }
-            Sticksy.hardRefreshAll();
-        }
-
-        function drawToCanvas() {
-            const scrollTop = window.pageYOffset; //html.scrollTop;
-            const maxScrollTop = html.scrollHeight; // - window.innerHeight;
-            const scrollFraction = scrollTop / maxScrollTop;
-            const frameIndex = Math.min(
-                frameCount - 1,
-                Math.ceil(scrollFraction * frameCount)
-            );
-
-            const mousefade = 1 - Math.min((scrollFraction / 0.02), 1);
-            document.getElementById("mouse_div").style.opacity = mousefade;
-
-            requestAnimationFrame(() => updateImage(frameIndex + 1))
-        }
-
-        window.addEventListener('resize', function(event) {
-            update_narrow();
-            drawToCanvas();
-        });
-        const currentFrame = index => (
-            `./assets/media/frames${frame_narrow}/${(60 + 2 * (index - 1)).toString().padStart(4, '0')}.jpg`
-        )
-
-        const preloadImages = () => {
-            for (let i = 1; i < frameCount; i++) {
-                const img = new Image();
-                img.src = currentFrame(i);
-            }
-        };
-
-        let setHeight = document.getElementById("set-height");
-        setHeight.style.height = frameCount * 200 + "px";
-
-        const img = new Image()
-        img.src = currentFrame(1);
-        update_narrow();
-        img.onload = function() {
-            context.drawImage(img, 0, 0);
-        }
-
-        const updateImage = index => {
-            img.src = currentFrame(index);
-            context.drawImage(img, 0, 0);
-        }
-
-        window.addEventListener('scroll', () => {
-            drawToCanvas();
-        });
-
-        preloadImages()
-        var stickyElements = Sticksy.initializeAll('.js-sticky-widget')
-    </script>
-    -->
-    <!--
-    <div style="background-color: rgb(26, 26, 26);">
-        <img src="./assets/media/cover.png" class="img-fluid" alt="Responsive image">
-    </div>
-    -->
     <div class="button-bar text-light" style="padding-bottom: 10px; background-color: rgb(35, 35, 35);">
         <div class="container" style="max-width: 768px;">
-            <h1 class="text-center">Iterative Motion Editing with Natural Language</h1>
+            <h1 class="text-center">Iterative Motion Editing <br> with Natural Language</h1>
         </div>
         <div class="container" style="max-width: 768px;">
             <h3 class="text-center" stye="font-size:2rem;">SIGGRAPH 2024</h3>
@@ -142,19 +38,19 @@
         <div class="container" style="max-width: 768px; padding-bottom: 20px;">
             <div class="row authors">
                 <div class="col">
-                    <h5 class="text-center"><a href="https://www.purvigoel.com/">Purvi Goel</a></h5>
+                    <h5 class="text-center"><a href="https://www.purvigoel.com/">Purvi Goel<sup>1</sup></a></h5>
                     <h6 class="text-center"></h6>
                 </div>
                 <div class="col">
-                    <h5 class="text-center"><a href="https://wangkua1.github.io/">Kuan-Chieh Wang</a></h5>
+                    <h5 class="text-center"><a href="https://wangkua1.github.io/">Kuan-Chieh Wang<sup>2</sup></a></h5>
                     <h6 class="text-center"></h6>
 		        </div>
                 <div class="col">
-                    <h5 class="text-center"><a href="https://tml.stanford.edu/">C. Karen Liu</a></h5>
+                    <h5 class="text-center"><a href="https://tml.stanford.edu/">C. Karen Liu<sup>1</sup></a></h5>
                     <h6 class="text-center"></h6>
 		</div>
 		<div class="col">
-                    <h5 class="text-center"><a href="https://graphics.stanford.edu/~kayvonf/">Kayvon Fatahalian</a></h5>
+                    <h5 class="text-center"><a href="https://graphics.stanford.edu/~kayvonf/">Kayvon Fatahalian<sup>1</sup></a></h5>
                     <h6 class="text-center"></h6>
                 </div>
             </div>
@@ -163,27 +59,40 @@
         <div class="container" style="max-width: 768px; padding-bottom: 0px;">
             <div class="row authors">
                 <div class="col">
-                    <h6 style="margin-top: 10px;" class="text-center">Stanford University</h6>
+                    <h6 style="margin-top: 10px;" class="text-center"><sup>1</sup>Stanford University, <sup>2</sup>Snap Inc.</h6>
                 </div>
             </div>
         </div>
         <div class="buttons" style="margin-bottom: 8px;">
-            <a class="btn text-light" role="button" href="">
-                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
-                    <path fill="white" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
-                </svg>Paper
+            <a class="btn text-light" role="button" href="https://arxiv.org/abs/2312.11538">
+                Paper
             </a>
             <a class="btn text-light" role="button" href="">
-                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24"><path fill="white" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>Code
+                Code (Coming Soon!)
             </a>
             <a class="btn text-light" role="button" href="">
-                <svg class="svg-inline--fa fa-rocket fa-w-16" style="width:24px;height:24px;margin-left:-12px;margin-right:12px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rocket" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505.12019,19.09375c-1.18945-5.53125-6.65819-11-12.207-12.1875C460.716,0,435.507,0,410.40747,0,307.17523,0,245.26909,55.20312,199.05238,128H94.83772c-16.34763.01562-35.55658,11.875-42.88664,26.48438L2.51562,253.29688A28.4,28.4,0,0,0,0,264a24.00867,24.00867,0,0,0,24.00582,24H127.81618l-22.47457,22.46875c-11.36521,11.36133-12.99607,32.25781,0,45.25L156.24582,406.625c11.15623,11.1875,32.15619,13.15625,45.27726,0l22.47457-22.46875V488a24.00867,24.00867,0,0,0,24.00581,24,28.55934,28.55934,0,0,0,10.707-2.51562l98.72834-49.39063c14.62888-7.29687,26.50776-26.5,26.50776-42.85937V312.79688c72.59753-46.3125,128.03493-108.40626,128.03493-211.09376C512.07526,76.5,512.07526,51.29688,505.12019,19.09375ZM384.04033,168A40,40,0,1,1,424.05,128,40.02322,40.02322,0,0,1,384.04033,168Z"></path></svg>
-                Demo
+                Video
             </a>
         </div>
     </div>
     
     <div style="background-color: rgb(255,255,255);">
+        
+
+        <div class="container" style="max-width: 768px; padding-top: 30px; padding-bottom: 0px;">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    <p>
+                        <!-- <strong> -->
+      			We introduce a system for using natural language to <b>conversationally</b> specify local edits to character motion. Our key idea is to cast motion editing as a two-step process: converting natural language editing instructions into Python programs that describe fine-grained editing operations with a LLM, then executing resulting operations using a constraint generation and diffusion-based motion infilling process. As an intermediate between text and joints, we define a set of kinematic <b>motion editing operators (MEOs)</b> that have well-defined semantics for how to modify specific frames of a target motion.
+                        <!-- </strong> -->
+                    </p>
+                    
+
+                </div>
+            </div>
+        </div>
         <div class="container" style="max-width: 768px; padding-top: 10px;  ">
             <div class="row">
                 <div class="col-md-12">
@@ -193,29 +102,17 @@
                 </div>
             </div>
         </div>
-
-        <div class="container" style="max-width: 768px; padding-top: 30px; padding-bottom: 0px;">
-            <div class="row">
-                <div class="col-md-12">
-                    
-                    <p>
-                        <!-- <strong> -->
-      			We introduce a system for using natural language to iteratively, <b>conversationally</b> specify local edits to character motion. Our key idea, inspired by recent work utilizing LLMs in robot planning, is to cast motion editing as a two-step process: converting natural language editing instructions into Python programs that describe fine-grained editing operations with a large language model, then executing resulting operations using a constraint generation and diffusion-based motion infilling process. As an intermediate between text and joints, we define a set of kinematic motion editing operators (MEOs) that have well-defined semantics for how to modify specific frames of a target motion.
-                        <!-- </strong> -->
-                    </p>
-                    
-
-                </div>
-            </div>
-        </div>
         <div class="button-bar" style="padding-top: 0px; padding-bottom: 0px; background-color: rgb(255,255,255);">
             <center> <p>Jump to:</p></center>
             <div class="buttons" style="margin-bottom: 8px; margin-top: 0px;">
+                <a class="btn btn-black-outline" role="button" href="#section0" style="color: black; border: 1px solid black;">
+                    System
+                </a>
                 <a class="btn btn-black-outline" role="button" href="#section1" style="color: black; border: 1px solid black;">
-                    Single Edits
+                    Results: Single Edits
                 </a>
                 <a class="btn btn-black-outline" role="button" href="#section2" style="color: black; border: 1px solid black;">
-                    Iterative Edits
+                    Results: Iterative Edits
                 </a>
                 <a class="btn btn-black-outline" role="button" href="#section3" style="color: black; border: 1px solid black;">
                     FAQ/Hindsights
@@ -223,40 +120,71 @@
             </div>
         </div>
     </div>
-    
 
-    <div id="section1" style="background-color: rgb(200, 200, 200);">
+    <div id="section0" style="background-color: rgb(240, 240, 240);">
         <div class="container" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
-            <p>Our system can generate edited motions that are plausible, faithful to input instructions, and non-destructive to the original motion. The videos below show motions before and after the edit.</p>
+            <p><b>System overview.</b> Our LLM-based parser converts natural language into Python code that describes the desired motion edit (green). Each method in the program is an MEO, defining a joint to modify, a spatial constraint (rotation/translation), and a time interval during which the constraint applies. Constraints are expressed <i>relative</i> to the properties of the source motion they are applied to. These Python programs can be executed to generate the desired motion edit (blue).</p>
+        </div>
+    </div>
+    
+    <div style="background-color: rgb(255, 255, 255);">
+        <div class="container" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
+            <img src="assets/images/system2.png" width="100%"">
+        </div>
+    </div>
+
+    <div style="background-color: rgb(240, 240, 240);">
+        <div class="container" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
+            <p> <b>MEO programs</b> generated by our LLM-based parser during an iterative editing session are shown below. Notice how the LLM agent provides justifications through comments to break down its reasoning (we encouraged it to do so by giving it several example programs with these patterns via in-context learning). Also notice how context from previous edits informs programs generated for future edits. </p>
+        </div>
+    </div>
+
+    <div style="background-color: rgb(255, 255, 255);">
+        <div class="container" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
+            <img src="assets/images/example_meos3.png" width="100%"">
+        </div>
+    </div>
+
+    <div id="section1" style="background-color: rgb(240, 240, 240);">
+        <div class="container" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
+            <p><b>Results on single edits</b>. Our system can generate edited motions that are plausible, faithful to input instructions, and non-destructive to the original motion. The videos below show motions before and after the edit.</p>
         </div>
     </div>
     <!-- Big grid -->
     <div style="background-color: rgb(255,255,255);">
         <div class="video-row">
-            <div class="col" style="padding-left:30%; padding-bottom:20px; display:grid;">
+            <div class="col" style="padding-left:10%; padding-bottom:20px; display:flex; align-items:center;">
                 <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:70%">
                     <source src="./assets/video/arm_swings_banner.mp4" type="video/mp4"></source>
                 </video>
+                <img src="assets/images/example_meo_arms2.png" style="width:30%; margin-left: 10px;">
             </div>
+            <!-- <div class="col" style="padding-bottom:20px;">
+                <img src="assets/images/test.png">
+            </div> -->
+
         </div>
         <div class="video-row">
-            <div class="col" style="padding-left:30%; padding-bottom:20px; display:grid;">
-                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:70%">
+            <div class="col" style="padding-left:10%; padding-bottom:20px; display:flex; align-items:center;">
+                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:70%">
                     <source src="./assets/video/chamberpos-banner.mp4" type="video/mp4"></source>
                 </video>
+                <img src="assets/images/example_meo_chamber.png" style="width:30%; margin-left: 10px;">
             </div>
         </div>
         <div class="video-row">
-            <div class="col" style="padding-left:30%; display:grid;">
-                <video class="specialvideo video lazy img-fluid" muted loop playsinline controls style="width:70%">
+            <div class="col" style="padding-left:10%; padding-bottom:20px; display:flex; align-items:center;">
+                <video class="specialvideo video lazy img-fluid" autoplay muted loop playsinline controls style="width:70%">
                     <source src="./assets/video/kickout_banner.mp4" type="video/mp4"></source>
                 </video>
+                <img src="assets/images/example_meo_jump.png" style="width:30%; margin-left: 10px;">
+            </div>
         </div>
     </div>
 
-     <div id="section2" style="background-color: rgb(200, 200, 200);">
+     <div id="section2" style="background-color: rgb(240, 240, 240);">
         <div class="container" style="padding-top: 30px; padding-bottom: 30px; text-align:center;">
-            <p>Our system allows editing motions conversationally, which enables progressive refinement of the character's motion, allows the user to break larger editing tasks into sub-goals, and supports clarification or even adjustment of editing intent. Each video below shows separate iterative editing sessions.</p>
+            <p><b>Results on iterative edits</b>.Our system allows editing motions conversationally, which enables progressive refinement of the character's motion, allows the user to break larger editing tasks into sub-goals, and supports clarification or even adjustment of editing intent. Each video below shows separate iterative editing sessions.</p>
                    
         </div>
     </div>
@@ -289,26 +217,31 @@
         </div>
     </div>
 
-    <div id="section3" style="background-color: rgb(200, 200, 200);">
+    <div id="section3" style="background-color: rgb(240, 240, 240);">
         <div class="container" style="max-width: 768px; padding-top: 30px;">
             <div class="row">
                 <div class="col-md-12">
                     <h2>FAQ:</h2>
 
                     <p> <b>Why not just use prompt engineering? </b></p>
-                     One alternative to recent motion-editing methods is to iterate on the input prompt ("prompt engineering") to the best text2motion model, e.g., changing the prompt "a side kick" to "a high side kick". Unfortunately, it can be hard to predict how these models will interpret changes in the prompt, and they provide little guarantee that the modified motion will retain any correspondence with the original. For the inherently iterative process of character motion refinement, a system that is both predictable and non-destructive of the current motion is vital. <br><br>
+                     One alternative to recent motion-editing methods is to iterate on the input prompt ("prompt engineering") to the best text2motion model, e.g., changing the original prompt "a side kick" to "a high side kick" and generating from scratch. Unfortunately, it can be hard to predict how these models will interpret changes in the prompt, and they provide little guarantee that the modified motion will retain any correspondence with the original. For the inherently iterative process of character motion refinement, a system that is both predictable and non-destructive to the current motion is vital. <br><br>
                     <p> <b>Is text a good way to specify motion edits? When is a text-based interface useful?</b></p>
-                     Text can be a ambiguous (and thus inefficient) way to describe precise edits--so why use text at all, instead of, e.g., a traditional keyframe animation software? For a single edit to a single joint, traditional methods may be more efficient, but we believe text is useful for iterative, <i>conversational</i> editing. Text instructions can build upon or refine previous edits, mimicking a conversation between user and character. While there's certainly a ways to go, we see our work as providing a good step in the direction of scaffolding iterative editing workflows. <br><br>
-                     That being said, we believe the iterative motion editing system of the future should be multimodal: text is one tool to describe edits, but so are demonstration (e.g., with images or videos), specifics of the scene/environment, and good old kinematic joint constraints. <br><br>
+                     Text can be an ambiguous (and thus inefficient) way to describe precise edits--so why use text at all, instead of, e.g., a traditional keyframe animation software? For a single edit to a single joint, traditional methods may be more efficient, but we believe text is useful for iterative, <i>conversational</i> editing. Text instructions can build upon or refine previous edits, mimicking a conversation between user and character. While there's certainly a ways to go, we see our work as providing a good step in the direction of scaffolding iterative editing workflows. <br><br>
+                     That being said, we believe the ideal motion editing system of the future should be multimodal: text is one tool to describe edits, but so are demonstration (e.g., with images or videos), specifics of the scene/environment, and good old kinematic joint constraints. <br><br>
                     <!-- More recent methods for motion editing have emerged in response, e.g., [<a href="https://yh2371.github.io/como/">Huang 2024</a>, <a href="https://mingyuan-zhang.github.io/projects/FineMoGen.html">Zhang 2023</a>]</p> -->
                     <p> <b>What type of edits are and are not supported?</b></p>
                     Our MEOs support kinematic editing of the main joints in the SMPL body. Physics-informed edits ("jump more forcefully") or semantic, stylization-based edits ("do that more excitedly") are not handled by our system, although we are excited about these directions. <br><br>
                     Our prompt design makes it quite straightforward to add program generation support for new MEOs: the new MEO is included in the part of the LLM prompt; example use(s) of the new MEO is provided in the demonstration part of the prompt. With our method, the LLM is likely to correctly target new operators without retraining due to its strong priors. For full system integration, the execution engine should implement the MEO. <br><br>
 
-                    <h4> <b>Hindsights?</b></h4>
-                    Our method splits up constraint generation from motion generation: an LLM translates instructions into executable Python programs of MEOs; our execution engine first generates motion constraints, e.g., keyframes, from the programs, then a diffusion-based motion infilling step integrates keyframes into the source motion. <br><br>We found the division of labor and introduction of an IR to be quite useful when scaling up the system, as opposed to using a single model to handle the whole text-to-edited-motion pipeline. First, the MEO intermediate representation is highly interpretable: it's clear what edit is being executed, and why. Second, the representation is controllable: each MEO reduces edits to a change along a single DOF; though our examples have the magnitude of change being set procedurally, it can in principle be set directly by the user (like a single-use rig). Third, the division of labor allows the pipeline to be more modular; the infilling model does not require re-training to add new types of kinematic edits. We found, for example, that scaling up our original set of rotation/translation MEOs to also handle relative translation was fairly simple, with no fine-tuning required. <br><br>
-                    Nevertheless, there's still a way to go with the quality of the motions produced by our infilling method. We don't, for example, handle how user edits may potentially change the timing of the original motion. This limitation can occasionally result in abrupt velocity changes. <br><br>
+                    <p> <b>How capable is the LLM Parser in generating executable code?</b></p>
+                    Quite! Given 100 editing prompts (collected by both asking ChatGPT to suggest kinematic editing instructions for sourec motion descriptions and also hand-writing editing prompts), the LLM parse successfully produced programs for 90 instructions on the first try, and an additional 7 after reflection/re-generation. Only 3 prompts failed to execute (generated instructions were not implemented by our current system, e.g., neck rotation, relative rotation, medial waist rotation). Thus, we believe the fundamental challenge of the system is generating MEO programs that embody the edit well, rather than generating valid programs. <br><br>
+                    
 
+                    <h4> <b>Hindsights?</b></h4>
+                    Our method splits up constraint generation from motion generation: an LLM translates instructions into executable Python programs of MEOs; our execution engine first generates motion constraints, e.g., keyframes, from the programs, then a diffusion-based motion infilling step integrates keyframes into the source motion. <br><br>
+                    We found the division of labor and introduction of an IR to be quite useful when scaling up the system, as opposed to using a single model to handle the whole text-to-edited-motion pipeline. First, the MEO intermediate representation is highly interpretable: it's clear what edit is being executed, and why. Second, the representation is controllable: each MEO reduces edits to a change along a single DOF; though our examples have the magnitude of change being set procedurally, it can in principle be set directly by the user (like a single-use rig). Third, the division of labor allows the pipeline to be more modular; the infilling model does not require re-training to add new types of kinematic edits. We found, for example, that scaling up our original set of rotation/translation MEOs to also handle relative translation was fairly simple, with no fine-tuning required. <br><br>
+                    The cons of this approach is that edits are currently limited to ones that can be expressed by frame-wise motion constraints and transitions in and out of those frames; as mentioned earlier, stylization-based edits are more difficult within this division of labor. Motion quality may also suffer with this more modular approach (see, in comparison, the more recent work <a href="https://yh2371.github.io/como/">[Huang 2024]</a>, which uses a single model to encapsulate both constraints and motion generation rather than our proposed two-stage execution engine). 
+                    We believe there's a lot of room to explore the right balance between modularity and generation quality!<br><br>
                 </div> 
             </div>
         </div>
@@ -319,7 +252,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2>Acknowledgements:</h2>
-                    Purvi Goel is supported by a Stanford Interdisciplinary Graduate Fellowship. Kuan-Chieh Wang was supported by Stanford Wu-Tsai Human Performance Alliances while at Stanford University. We thank the anonymous reviewers for constructive feedback; Vishnu Sarukkai, Sarah Jobalia, Sofia Di Toro Wyetzner, Haotian Zhang, David Durst, and James Hong for helpful discussions. Our codebase was built with invaluable help from <a href="https://jmhb0.github.io/">James Burgess</a>. This website was developed referencing <a href="https://edge-dance.github.io/">EDGE</a>, and by extension, the <a href="https://imagen.research.google/">Imagen</a> site.
+                    Purvi Goel is supported by a Stanford Interdisciplinary Graduate Fellowship. Kuan-Chieh Wang was supported by Stanford Wu-Tsai Human Performance Alliances while at Stanford University. We thank the anonymous reviewers for constructive feedback; Vishnu Sarukkai, Sarah Jobalia, Sofia Di Toro Wyetzner, Haotian Zhang, David Durst, and James Hong for helpful discussions. Our codebase was built with invaluable help from <a href="https://jmhb0.github.io/">James Burgess</a>. This website was developed referencing <a href="https://edge-dance.github.io/">EDGE</a>, and by extension, the excellent <a href="https://imagen.research.google/">Imagen</a> site.
                 </div>
             </div>
         </div>
